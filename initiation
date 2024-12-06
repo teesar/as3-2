@@ -1,0 +1,8 @@
+#!/bin/bash
+pacman -Syu
+pacman -S archlinux-keyring
+pacman -Syu
+pacman -S git neovim
+git config --global user.email "mishamakaroff@gmail.com"
+echo 'eval $(ssh-agent -s)' >> ~/.bashrc
+echo 'ssh-add ~/.ssh/github' >> ~/.bashrc
