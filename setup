@@ -26,7 +26,7 @@ mkdir /etc/nginx/sites-enabled
 cp "$dir/Data/system-info.conf" /etc/nginx/sites-available/system-info.conf
 ln -s /etc/nginx/sites-available/system-info.conf /etc/nginx/sites-enabled/system-info.conf
 chown -R webgen:webgen /var/lib/webgen
-chmod -R 755 /var/lib/webgen
+chmod -R 750 /var/lib/webgen
 
 systemctl enable --now /etc/systemd/system/generate-index.service
 systemctl enable --now /etc/systemd/system/generate-index.timer
