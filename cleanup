@@ -1,0 +1,19 @@
+#!/bin/bash
+dir="$(dirname "$0")"
+if [ "$(id -u)" -ne 0 ]; then
+  echo "This script must be run with sudo or as root. Please try again."
+  exit 1
+fi
+systemctl stop nginx
+systemctl stop ufw
+systemctl disable nginx
+systemctl disable ufw
+pacman -Rns nginx ufw --noconfirm
+rm -rf /etc/nginx
+rm -rf /var/lib/nginx
+userdel -r webgen
+rm -rf /var/lib/webgen
+rm -rf /etc/systemd/system/generate-index.timer
+rm -rf /etc/systemd/system/generate-index.service
+systemctl daemon-reload
+
