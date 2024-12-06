@@ -1,8 +1,48 @@
 # 2420 as 3 part 2
 
-# setup
-### This script will: 
-#### 1) Set up an nginx web server displaying a static html page containing:
+# Building two identical web/file servers with a load balancer on Digital Ocean.
+#### Note:
+If you have any questions regarding installation you may find the following video helpful:
+https://www.youtube.com/watch?v=p6aee-binz4
+It displays each step of the process used here.
+
+## Requirements:
+* The setup script must be run as root or with sudo.
+* Digital Ocean Account.
+* Arch Linux Image Uploaded to Digital Ocean.
+
+#### Step 1)
+* Create two arch linux dropslets on digital ocean with a shared tag. I suggest the word "web".
+* Move this github repository onto each of your droplets using your preferred method. (github, sftp, etc)
+
+#### Step 2)
+Run the provided setup script with sudo or as root on each droplet.
+```
+sudo ./setup
+```
+
+#### Step 3) 
+Copy the ip addresses for your droplets from the digital ocean project page, and confirm your servers are up and running.
+##### Note: You may add /documents after the ip address to view the file server
+
+#### Step 4)
+* Click the Green "Create" rectangle at the top of the digital ocean website.
+* Click "Load Balancers" on the menu that opens.
+* Selection Regional Load Balancer type.
+* Select the datacenter region closest to your geographic area.
+* Select External Network Visibility.
+* Enter a simple name for your load balancer in the name field such as "Loader"
+* Click "Create Load Balancer"
+
+#### Step 5)
+* Copy the ip address for the load balancer from the digital ocean project page, and navigate to it through the url bar on your web browser. 
+* Confirm your servers are both up and running by repeatedly refreshing the page and watching the displayed "Public IP address of server". This should change between two different numbers as you refresh, indicating both servers are available throught the load balancer.
+* Adjust the url bar by adding "/documents" after the ip address. Refresh the page and you will see an index of documents. 
+* Left click the file name to download the sample document.
+* Congratulations! Youv'e done it!
+
+## What the setup script does:
+#### 1) Sets up an nginx web server displaying a static html page containing:
 
 - Kernel Release
 - Operating System
@@ -13,31 +53,9 @@
 Note: This html page updates the first time the script is run, and then every day at 5 am.
 
 
-#### 2) Configure a ufw firewall that only allows http and ssh traffic (ssh rate limiting enabled).
+#### 2) Configures a ufw firewall that only allows http and ssh traffic (ssh rate limiting enabled).
 
-#### 3) Configure a file server accessible through /documents
-
-
-## Requirements
-* The script must be run with sudo or as root.
-
-
-
-
-
-## Running the script
-Once this repository has been transferred to your machine you may choose to run the command to start the script from within the same directory as the script, or from a different directory.
-
-Example 1: Running the script from within the same directory.
-```
-sudo ./the_one_script
-```
-
-Example 2: Running the script from a different directory.
-- ie. If you have cloned this repository into /home/arch/server-start, and you want to run the script without navigating to that folder,you could run the following command:
-```
-sudo /home/arch/server-start/the_one_script
-```
+#### 3) Configures a file server accessible through /documents
 
 
 
@@ -83,7 +101,3 @@ sudo nginx -t
 ```
 
 * When writing a script that moves a file into a new location and then attempts to run it, make sure to order the commands in your script properly to avoid wasting time wondering why the file isn't being run.
-
-* You were working with Kernel Release: 6.12.1-arch1-1 when writing this script.
-
-![Great Success!](./Assets/great-success.png)
