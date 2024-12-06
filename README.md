@@ -1,6 +1,6 @@
 # 2420 as 3 part 2
 
-# The One Script
+# setup
 ### This script will: 
 #### 1) Set up an nginx web server displaying a static html page containing:
 
@@ -8,14 +8,21 @@
 - Operating System
 - Date
 - Number of Installed Packages
+- Public IP address of server
 
 Note: This html page updates the first time the script is run, and then every day at 5 am.
 
 
 #### 2) Configure a ufw firewall that only allows http and ssh traffic (ssh rate limiting enabled).
 
+#### 3) Configure a file server accessible through /documents
+
+
 ## Requirements
 * The script must be run with sudo or as root.
+
+
+
 
 
 ## Running the script
