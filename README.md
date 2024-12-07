@@ -57,8 +57,9 @@ Note: This html page updates the first time the script is run, and then every da
 
 #### 3) Configures a web file server through nginx which is accessible through adding "/documents" to your load balancer's ip address and navigating to it in your web browser.
 
+### Initiation Script
 
-## The initiation script contains some commands I find useful when starting a new server. It syncs, refreshes, and updates system packages and the keyring, installs neovim for a text editor, installs git for github access, sets the global git config user email address to my personal email address, and adds ssh-agent commands to my .bashrc file so I can always connect to ssh through my shell. If you wish to use it, you'll need to substitute my personal email address for yours.
+#### The initiation script contains some commands I find useful when starting a new server. It syncs, refreshes, and updates system packages and the keyring, installs neovim for a text editor, installs git for github access, sets the global git config user email address to my personal email address, and adds ssh-agent commands to my .bashrc file so I can always connect to ssh through my shell. If you wish to use it, you'll need to substitute my personal email address for yours.
 
 ## General Notes From Development Process
 
@@ -102,3 +103,7 @@ sudo nginx -t
 ```
 
 * When writing a script that moves a file into a new location and then attempts to run it, make sure to order the commands in your script properly to avoid wasting time wondering why the file isn't being run.
+
+* PERMISSIONS PERMISSIONS PERMISSIONS
+
+* Have a nice weekend :)
