@@ -1,10 +1,10 @@
-# 2420 as 3 part 2
+# 2420 Assignment 3 Part 2
 
-# Building two identical web/file servers with a load balancer on Digital Ocean.
+# Building Two Identical Web/File Servers With A Load Balancer On Digital Ocean.
 #### Note:
-If you have any questions regarding installation you may find the following video helpful:
+Please check out my youtube video which shows the installation process and gives an indepth explanation of the files in this repository!
 https://www.youtube.com/watch?v=p6aee-binz4
-It displays each step of the process used here and then dives into how each file in this repository works.
+
 
 ## Requirements:
 * The setup script must be run as root or with sudo.
