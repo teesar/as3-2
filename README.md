@@ -4,7 +4,7 @@
 #### Note:
 If you have any questions regarding installation you may find the following video helpful:
 https://www.youtube.com/watch?v=p6aee-binz4
-It displays each step of the process used here.
+It displays each step of the process used here and then dives into how each file in this repository works.
 
 ## Requirements:
 * The setup script must be run as root or with sudo.
@@ -12,7 +12,7 @@ It displays each step of the process used here.
 * Arch Linux Image Uploaded to Digital Ocean.
 
 #### Step 1)
-* Create two arch linux dropslets on digital ocean with a shared tag. I suggest the word "web".
+* Create two arch linux droplets on digital ocean with a shared tag. I suggest the word "web".
 * Move this github repository onto each of your droplets using your preferred method. (github, sftp, etc)
 
 #### Step 2)
@@ -22,8 +22,8 @@ sudo ./setup
 ```
 
 #### Step 3) 
-Copy the ip addresses for your droplets from the digital ocean project page, and confirm your servers are up and running.
-##### Note: You may add /documents after the ip address to view the file server
+Copy the ip addresses for your droplets from the digital ocean project page, and navigate to them in your web browser toconfirm your servers are up and running.
+##### Note: You may add "/documents" after the ip address to view the file server.
 
 #### Step 4)
 * Click the Green "Create" rectangle at the top of the digital ocean website.
@@ -55,9 +55,10 @@ Note: This html page updates the first time the script is run, and then every da
 
 #### 2) Configures a ufw firewall that only allows http and ssh traffic (ssh rate limiting enabled).
 
-#### 3) Configures a file server accessible through /documents
+#### 3) Configures a web file server through nginx which is accessible through adding "/documents" to your load balancer's ip address and navigating to it in your web browser.
 
 
+## The initiation script contains some commands I find useful when starting a new server. It syncs, refreshes, and updates system packages and the keyring, installs neovim for a text editor, installs git for github access, sets the global git config user email address to my personal email address, and adds ssh-agent commands to my .bashrc file so I can always connect to ssh through my shell. If you wish to use it, you'll need to substitute my personal email address for yours.
 
 ## General Notes From Development Process
 
