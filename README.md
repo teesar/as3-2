@@ -41,7 +41,7 @@ Copy the ip addresses for your droplets from the digital ocean project page, and
 * Left click the file name to download the sample document.
 * Congratulations! Youv'e done it!
 
-## What the setup script does:
+## What The Setup Script Does:
 #### 1) Sets up an nginx web server displaying a static html page containing:
 
 - Kernel Release
@@ -57,7 +57,8 @@ Note: This html page updates the first time the script is run, and then every da
 
 #### 3) Configures a web file server through nginx which is accessible through adding "/documents" to your load balancer's ip address and navigating to it in your web browser.
 
-### Initiation Script
+
+## What The Initiation Script Does
 
 #### The initiation script contains some commands I find useful when starting a new server. It syncs, refreshes, and updates system packages and the keyring, installs neovim for a text editor, installs git for github access, sets the global git config user email address to my personal email address, and adds ssh-agent commands to my .bashrc file so I can always connect to ssh through my shell. If you wish to use it, you'll need to substitute my personal email address for yours.
 
